@@ -32,7 +32,7 @@ if(name == null || name == "") name = "Visitante";
 	    		
 	    	
 		    		$.ajax({
-		    			url: window.location.origin+'/AgenciaPortal/menu', 
+		    			url: window.location.origin+'/menu', 
 		    			type: 'GET',
 		    			dataType: 'json',
 		    			success: function(resposta) {
@@ -74,7 +74,7 @@ if(name == null || name == "") name = "Visitante";
                                     <li><a href="#">Editar Perfil</a></li>
                                     <li><a href="#">Configurações</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="/AgenciaPortal/logout">Deslogar</a></li>
+                                    <li><a href="/logout">Deslogar</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -105,7 +105,7 @@ if(name == null || name == "") name = "Visitante";
                             </ul>
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="/AgenciaPortal/logout"><i class="menu-icon icon-signout"></i>Deslogar </a></li>
+                                <li><a href="/logout"><i class="menu-icon icon-signout"></i>Deslogar </a></li>
                             </ul>
                         </div>
                         <!--/.sidebar-->

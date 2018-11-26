@@ -45,7 +45,7 @@ if(name == null || name == "") name = "Visitante";
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="AgenciaPortal/home" class="site_title"><i class="fa fa-plane"></i> <span>Agência</span></a>
+              <a href="/home" class="site_title"><i class="fa fa-plane"></i> <span>Agência</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -72,8 +72,8 @@ if(name == null || name == "") name = "Visitante";
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Principal <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                    	<li><a href="AgenciaPortal/home">Index</a></li>
-                      	<li><a href="AgenciaPortal/ultimasViagens">Ultimas Viagens</a></li>
+                    	<li><a href="/home">Index</a></li>
+                      	<li><a href="/ultimasViagens">Ultimas Viagens</a></li>
                     </ul>
                   </li>
                   
@@ -105,7 +105,7 @@ if(name == null || name == "") name = "Visitante";
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/AgenciaPortal/logout">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -130,16 +130,16 @@ if(name == null || name == "") name = "Visitante";
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                   	 <% if(isAdmin) { %>
                     <li>
-                      <a href="/AgenciaPortal/admin/homeadmin">
+                      <a href="admin/homeadmin">
                         <span class="badge bg-red pull-right">ONLY ADMIN</span>
                         <span>Administrativo</span>
                       </a>
                     </li>
 					<% } %>
-                    <li><a href="/AgenciaPortal/profile"> Perfil</a></li>
+                    <li><a href="/profile"> Perfil</a></li>
                     
-                    <li><a href="/AgenciaPortal/ajuda">Ajuda</a></li>
-                    <li><a href="/AgenciaPortal/logout"><i class="fa fa-sign-out pull-right"></i> Deslogar</a></li>
+                    <li><a href="/ajuda">Ajuda</a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Deslogar</a></li>
                   </ul>
                 </li>
 
@@ -272,7 +272,7 @@ if(name == null || name == "") name = "Visitante";
 	    		
 	    	
 	    		$.ajax({
-	    			url: window.location.origin+'/AgenciaPortal/menu', 
+	    			url: window.location.origin+'/menu', 
 	    			type: 'GET',
 	    			dataType: 'json',
 	    			success: function(resposta) {
@@ -280,7 +280,7 @@ if(name == null || name == "") name = "Visitante";
 			    		 $('#menu_principal').html('');
 			    		 
 			    		 for (var i=0; i<resposta.length; i++) {
-			    			 $('#menu_principal').append('<li><a href="AgenciaPortal/viagens/'+resposta[i].alias.toLowerCase()+'">'+resposta[i].alias+'</a></li>');
+			    			 $('#menu_principal').append('<li><a href="viagens/'+resposta[i].alias.toLowerCase()+'">'+resposta[i].alias+'</a></li>');
 			    		 }
 		    		
 			    		}

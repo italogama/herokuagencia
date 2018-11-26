@@ -190,7 +190,7 @@
         
   </dependencies>
   <build>
-    <finalName></finalName>
+    <finalName>AgenciaPortal</finalName>
     <plugins>
 		<plugin>
 		<groupId>org.apache.maven.plugins</groupId>

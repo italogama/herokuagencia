@@ -196,37 +196,25 @@
             <!-- Config: Maven Tomcat Plugin -->
             <!-- http://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-               	<artifactId>tomcat8-war-runner</artifactId>
-    			<version>3.0-r1655215</version>
-    			<configuration>
-                <!-- Config: contextPath and Port (Default - /AgenciaPortal
-                    : 8080) -->
-                <!-- <configuration> <path>/</path> <port>8899</port> </configuration> -->
-                	<url>http://localhost:8080/AgenciaPortal</url>
-            		<server>localhost</server>
-            		<path>/${project.build.finalName}</path>
-            	</configuration>
-            </plugin>
-            
-            <plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-eclipse-plugin</artifactId>
-		        <configuration>
-		          <downloadSources>true</downloadSources>
-		          <downloadJavadocs>true</downloadJavadocs>
-		        </configuration>
-      		</plugin>
-      
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals><goal>copy</goal></goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>9.0.13.0</version>
+                                <destFileName>webapp-runner.jar</destFileName>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
             
         </plugins>
   </build>
